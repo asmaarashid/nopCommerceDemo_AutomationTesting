@@ -1,3 +1,4 @@
+@smoke
 Feature: user should be able to select sub-category from the main categories
 
   Scenario: user hover on a main category and select a sub-category from it

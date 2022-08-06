@@ -1,3 +1,4 @@
+@smoke
 Feature: registered user must be able to log in
   Background:
     Given user goes to log in page

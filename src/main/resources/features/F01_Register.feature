@@ -1,5 +1,6 @@
-Feature: user could register to the webapp
-  Scenario: new visitors could register with valid data
+@smoke
+Feature: user could register
+  Scenario: new visitors register with valid data
     Given user goes to register page
     When user chooses a gender "female"
     And user enters full name "Asmaa" and "Rashid"

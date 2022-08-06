@@ -1,3 +1,4 @@
+@smoke
 Feature: user could change currency
 
   Scenario: user could change currency from USD to Euro
