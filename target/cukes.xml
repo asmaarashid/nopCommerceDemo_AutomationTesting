@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="3" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="22" time="128.858">
+    <testcase classname="user could register" name="new visitors register with valid data" time="7.717">
+        <system-out><![CDATA[Given user goes to register page............................................passed
+When user chooses a gender "female".........................................passed
+And user enters full name "Asmaa" and "Rashid"..............................passed
+And user chooses date of  birth.............................................passed
+And user enters email "nopdemoprojectasmaa@gmail.com".......................passed
+And user enters company name................................................passed
+And user enters password "123456" and confirmation "123456".................passed
+And user clicks on register button..........................................passed
+Then webapp displays success message........................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="registered user must be able to log in" name="user logs in with registered email and password" time="6.423">
+        <system-out><![CDATA[Given user goes to log in page..............................................passed
+When user enters registered email "nopdemoprojectasmaa@gmail.com" and password "123456".passed
+And user clicks on log in button............................................passed
+Then user is logged in successfully.........................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="registered user must be able to log in" name="user log in with invalid account data" time="6.239">
+        <system-out><![CDATA[Given user goes to log in page..............................................passed
+When user enters invalid email "aaa@aaa.aaa" and password "111111"..........passed
+And user clicks on log in button............................................passed
+Then user is not logged in successfully.....................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="registered user must be able to log in" name="user forgets password" time="6.147">
+        <system-out><![CDATA[Given user goes to log in page..............................................passed
+And user clicks on forgot password..........................................passed
+When user enters email for recovery.........................................passed
+And user clicks on recovery button..........................................passed
+Then recovery email is sent to the user.....................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="logged user should be able to search for products either by name or SKU" name="user could search by name" time="4.864">
+        <system-out><![CDATA[When user search for product using name "necklace"..........................passed
+Then user is directed to right page.........................................passed
+And all products with the same name should be displayed with the "necklace".passed
+]]></system-out>
+    </testcase>
+    <testcase classname="logged user should be able to search for products either by name or SKU" name="user could search by name 2" time="5.453">
+        <system-out><![CDATA[When user search for product using name "laptop"............................passed
+Then user is directed to right page.........................................passed
+And all products with the same name should be displayed with the "laptop"...passed
+]]></system-out>
+    </testcase>
+    <testcase classname="logged user should be able to search for products either by name or SKU" name="user could search by name 3" time="4.934">
+        <system-out><![CDATA[When user search for product using name "shoes".............................passed
+Then user is directed to right page.........................................passed
+And all products with the same name should be displayed with the "shoes"....passed
+]]></system-out>
+    </testcase>
+    <testcase classname="logged user should be able to search for products either by name or SKU" name="user could search by SKU" time="6.525">
+        <system-out><![CDATA[When user search for product using SKU "AD_C80_RS"..........................passed
+Then user goes to the product page..........................................passed
+Then the product with the same SKU should be displayed with the "AD_C80_RS".passed
+]]></system-out>
+    </testcase>
+    <testcase classname="logged user should be able to search for products either by name or SKU" name="user could search by SKU 2" time="5.559">
+        <system-out><![CDATA[When user search for product using SKU "EG_GEM_NL"..........................passed
+Then user goes to the product page..........................................passed
+Then the product with the same SKU should be displayed with the "EG_GEM_NL".passed
+]]></system-out>
+    </testcase>
+    <testcase classname="logged user should be able to search for products either by name or SKU" name="user could search by SKU 3" time="6.783">
+        <system-out><![CDATA[When user search for product using SKU "NIGHT_VSN"..........................passed
+Then user goes to the product page..........................................passed
+Then the product with the same SKU should be displayed with the "NIGHT_VSN".passed
+]]></system-out>
+    </testcase>
+    <testcase classname="user could change currency" name="user could change currency from USD to Euro" time="4.39">
+        <system-out><![CDATA[When user selects Euro as the currency......................................passed
+Then all the below products' prices should be in euro.......................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="user should be able to select sub-category from the main categories" name="user hover on a main category and select a sub-category from it" time="5.397">
+        <system-out><![CDATA[When user hovers on main category...........................................passed
+And user selects a sub-category.............................................passed
+Then this sub-category's page is opened.....................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="user should be able to filter products by color" name="user filters shoes by color" time="5.257">
+        <system-out><![CDATA[Given user goes to shoes page...............................................passed
+When user select a color filter.............................................passed
+Then filter should be applied and only products of this color are displayed.passed
+]]></system-out>
+    </testcase>
+    <testcase classname="user could select different tags" name="user could select any tag for a product" time="8.713">
+        <system-out><![CDATA[When user selects a category................................................passed
+When user goes to tags page.................................................passed
+And user selects a tag......................................................passed
+Then all products with this tag are displayed...............................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="user navigates through home slider" name="user could navigate through first banner on the slider to specific location" time="4.115">
+        <failure message="The following asserts failed:&#10;&#9;first banner URL is wrong! expected [https://demo.nopcommerce.com/nokia-lumia-1020] but found [https://demo.nopcommerce.com/]" type="java.lang.AssertionError"><![CDATA[When user click on first banner.............................................passed
+Then user is directed to nokia page.........................................failed
+
+StackTrace:
+java.lang.AssertionError: The following asserts failed:
+	first banner URL is wrong! expected [https://demo.nopcommerce.com/nokia-lumia-1020] but found [https://demo.nopcommerce.com/]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
+	at org.example.stepDefinitions.SD08_HomeSlider.firstBannerNavigation(SD08_HomeSlider.java:31)
+	at ✽.user is directed to nokia page(file:///C:/Users/asmaa/IdeaProjects/NOP_EcommerceDemo/src/main/resources/features/F08_Slider.feature:6)
+]]></failure>
+    </testcase>
+    <testcase classname="user navigates through home slider" name="user could go to second banner and navigate through it" time="3.934">
+        <failure message="The following asserts failed:&#10;&#9;second banner URL wrong!! expected [https://demo.nopcommerce.com/iphone-6] but found [https://demo.nopcommerce.com/]" type="java.lang.AssertionError"><![CDATA[When user goes to second banner.............................................passed
+And user clicks on second banner............................................passed
+Then user is directed to iphone page........................................failed
+
+StackTrace:
+java.lang.AssertionError: The following asserts failed:
+	second banner URL wrong!! expected [https://demo.nopcommerce.com/iphone-6] but found [https://demo.nopcommerce.com/]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
+	at org.example.stepDefinitions.SD08_HomeSlider.secondBannerNavigation(SD08_HomeSlider.java:57)
+	at ✽.user is directed to iphone page(file:///C:/Users/asmaa/IdeaProjects/NOP_EcommerceDemo/src/main/resources/features/F08_Slider.feature:11)
+]]></failure>
+    </testcase>
+    <testcase classname="user could follow NOP E-commerce on multiple media sites" name="user could follow on facebook" time="5.219">
+        <system-out><![CDATA[When user clicks on facebook icon...........................................passed
+Then user is directed to facebook "https://www.facebook.com/nopCommerce"....passed
+]]></system-out>
+    </testcase>
+    <testcase classname="user could follow NOP E-commerce on multiple media sites" name="user could follow on twitter" time="5.491">
+        <system-out><![CDATA[When user clicks on twitter icon............................................passed
+Then user is directed to twitter "https://twitter.com/nopCommerce"..........passed
+]]></system-out>
+    </testcase>
+    <testcase classname="user could follow NOP E-commerce on multiple media sites" name="user could follow on ssr" time="9.181">
+        <failure message="Expected condition failed: waiting for number of open windows to be 2 (tried for 5 second(s) with 500 milliseconds interval)&#10;Build info: version: '4.3.0', revision: 'a4995e2c09*'&#10;System info: host: 'ASMAA', ip: '192.168.1.3', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.1.1'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.80, chrome: {chromedriverVersion: 103.0.5060.134 (8ec6fce403b..., userDataDir: C:\Users\asmaa\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:8283}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:8283/devtool..., se:cdpVersion: 104.0.5112.80, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Session ID: bc369977c118f53544308d202927dd17" type="org.openqa.selenium.TimeoutException"><![CDATA[When user clicks on rss icon................................................passed
+Then user is directed to rss "https://demo.nopcommerce.com/new-online-store-is-open".failed
+
+StackTrace:
+org.openqa.selenium.TimeoutException: Expected condition failed: waiting for number of open windows to be 2 (tried for 5 second(s) with 500 milliseconds interval)
+Build info: version: '4.3.0', revision: 'a4995e2c09*'
+System info: host: 'ASMAA', ip: '192.168.1.3', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.1.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.80, chrome: {chromedriverVersion: 103.0.5060.134 (8ec6fce403b..., userDataDir: C:\Users\asmaa\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:8283}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:8283/devtool..., se:cdpVersion: 104.0.5112.80, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: bc369977c118f53544308d202927dd17
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:87)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+	at org.example.stepDefinitions.SD09_FollowUs.goToRSS(SD09_FollowUs.java:68)
+	at ✽.user is directed to rss "https://demo.nopcommerce.com/new-online-store-is-open"(file:///C:/Users/asmaa/IdeaProjects/NOP_EcommerceDemo/src/main/resources/features/F09_FollowUs.feature:14)
+]]></failure>
+    </testcase>
+    <testcase classname="user could follow NOP E-commerce on multiple media sites" name="user could follow on youtube" time="6.161">
+        <system-out><![CDATA[When user clicks on youtube icon............................................passed
+Then user is directed to youtube "https://www.youtube.com/user/nopCommerce".passed
+]]></system-out>
+    </testcase>
+    <testcase classname="user could add an item to the wishlist" name="user could add item to wishlist and see success message" time="4.368">
+        <system-out><![CDATA[When user clicks on add to wishlist icon....................................passed
+Then a success message is displayed on top of the page......................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="user could add an item to the wishlist" name="user could add item to wishlist and check the wish list" time="5.706">
+        <system-out><![CDATA[When user clicks on add to wishlist icon....................................passed
+And user goes to wishlist page..............................................passed
+Then the item is added to wishlist successfully.............................passed
+]]></system-out>
+    </testcase>
+</testsuite>
